@@ -1,17 +1,55 @@
-body {
-  font-family: 'Rubik', sans-serif;
+/* CSS for AppNavbar component */
+.navbar-dark {
+  background-color: #141414;
+  padding: 10px 16px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Rubik Mono One', sans-serif;
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e50914;
 }
 
-.small {
-  font-weight: 300;
-  font-style: italic;
+.nav-link {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 20px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #e50914;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.modal-content {
+  background-color: #141414;
+  color: #fff;
+  border: none;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.nav-item {
+  margin-right: 16px;
+}
+
+.nav-link.active {
+  background-color: #e50914;
+  color: #fff;
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+
+.tab-pane {
+  padding: 24px;
 }
