@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SearchMovies from "./pages/SearchMovies";
-
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import TvShows from "./pages/TvShows";
+import Movies from "./pages/Movies";
+import SearchMovies from "./pages/SearchMovies";
 
 // import ApolloProvider
 import {
@@ -13,7 +15,6 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Home from "./pages/Home";
 
 // Construct main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,7 +45,10 @@ function App() {
         <>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={SearchMovies} />
+            <Route exact path="/" component={Home} />
+            <Route path="/search" component={SearchMovies} />
+            <Route path="/tv-shows" component={TvShows} />
+
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
           <Footer />
