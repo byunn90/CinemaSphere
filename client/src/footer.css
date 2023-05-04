@@ -4,6 +4,11 @@ footer {
   color: #8c8c8c;
   padding: 40px 0;
   font-size: 14px;
+  display: flex;
+  align-content: flex-end;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-top ul {
