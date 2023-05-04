@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../public/movieCard.css";
 import {
-  Jumbotron,
   Container,
   // Col,
   // Form,
@@ -47,13 +46,6 @@ const Home = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
-        <Container className="welcome">
-          <h1>Welcome to Cinema Sphere!</h1>
-          <p>Here are some popular movies to get you started:</p>
-        </Container>
-      </Jumbotron>
-
       <Container>
         <CardColumns>
           {popularMovies.map((movie) => {

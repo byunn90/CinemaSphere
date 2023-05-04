@@ -10,7 +10,6 @@ const movieSchema = new Schema({
     type: String,
     required: true,
   },
-  // saved book id from GoogleBooks
   movieId: {
     type: String,
     required: true,

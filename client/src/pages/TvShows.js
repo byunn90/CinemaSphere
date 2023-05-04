@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../public/movieCard.css";
-import { Jumbotron, Container, Card, CardColumns } from "react-bootstrap";
+import { Container, Card, CardColumns } from "react-bootstrap";
 
 const TvShows = () => {
   const [popularTvShows, setPopularTvShows] = useState([]);
@@ -40,13 +40,6 @@ const TvShows = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
-        <Container>
-          <h1>Welcome to Cinema Sphere!</h1>
-          <p>Here are some popular TV shows to get you started:</p>
-        </Container>
-      </Jumbotron>
-
       <Container>
         <CardColumns>
           {popularTvShows.map((tvShow) => {
