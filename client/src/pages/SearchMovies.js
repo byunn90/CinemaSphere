@@ -57,6 +57,8 @@ const SearchMovies = () => {
     }
   };
 
+  const handlePopClick = () => {};
+
   return (
     <>
       <Jumbotron fluid className="text-light bg-dark">
