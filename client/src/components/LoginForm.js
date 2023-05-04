@@ -19,8 +19,7 @@ const LoginForm = () => {
   useEffect(() => {
     if (error) setShowAlert(true);
     else setShowAlert(false);
-  }, [error])
-
+  }, [error]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
