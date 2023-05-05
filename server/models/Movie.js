@@ -1,7 +1,7 @@
 const { Schema } = require("mongoose");
 
 const movieSchema = new Schema({
-  authors: [
+  directors: [
     {
       type: String,
     },
