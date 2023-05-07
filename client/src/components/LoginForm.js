@@ -1,7 +1,7 @@
 // see SignupForm.js for comments
 import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
-
+import "../public/LoginForm.css";
 // import useMutation and LOGIN-USER
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../utils/mutations";
@@ -56,7 +56,12 @@ const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form
+        className="login-form"
+        noValidate
+        validated={validated}
+        onSubmit={handleFormSubmit}
+      >
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}

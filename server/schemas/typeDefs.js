@@ -8,6 +8,7 @@ const typeDefs = gql`
     movieCount: Int
     savedMovies: [Movies]
   }
+
   type Movies {
     movieId: ID
     description: String
@@ -16,10 +17,12 @@ const typeDefs = gql`
     image: String
     link: String
   }
+
   type Auth {
     token: ID!
-    user: user
+    user: User
   }
+
   input MovieInput {
     movieID: String!
     directors: [String]
@@ -28,14 +31,16 @@ const typeDefs = gql`
     image: String
     link: String
   }
+
   type Query {
     me: User
   }
+
   type Mutation {
-    login(username: , email: , password: ): Auth
-    addUser(username: email: password): Auth
-    saveMovie()
-    removeMovie()
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    saveMovie(movieId: String!, title: String, link: String): User
+    removeMovie(movieId: ID!): User
   }
 `;
 

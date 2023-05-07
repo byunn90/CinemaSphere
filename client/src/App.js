@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import TvShows from "./pages/TvShows";
 import Movies from "./pages/Movies";
+import Subscribe from "./pages/Subscribe";
 import SearchMovies from "./pages/SearchMovies";
 
 // import ApolloProvider
@@ -48,6 +49,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/search" component={SearchMovies} />
             <Route path="/tv-shows" component={TvShows} />
+            <Route path="/subscribe" component={Subscribe} />
 
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Container,
+  Modal,
+  Tab,
+  NavDropdown,
+} from "react-bootstrap";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
-
 import Auth from "../utils/auth";
 
 const AppNavbar = () => {
@@ -12,7 +18,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar style={{ backgroundColor: "#141414" }} variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
             Cinema Sphere
@@ -32,7 +38,17 @@ const AppNavbar = () => {
                   <Nav.Link as={Link} to="/saved">
                     Saved Items
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <NavDropdown
+                    title={`${Auth.getProfile().data.username}`}
+                    id="basic-nav-dropdown"
+                  >
+                    <Link to="/subscribe" className="dropdown-item">
+                      Subscribe
+                    </Link>
+                    <NavDropdown.Item onClick={Auth.logout}>
+                      Logout
+                    </NavDropdown.Item>
+                  </NavDropdown>
                 </>
               ) : null}
             </Nav>

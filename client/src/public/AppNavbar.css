@@ -1,0 +1,11 @@
+/* Navbar styles */
+.navbar {
+  background-color: #141414;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+/* Navbar brand (logo) styles */
+.navbar-brand {
+  font-size: 2;
+}

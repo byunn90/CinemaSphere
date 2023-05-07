@@ -1,11 +1,21 @@
+import { Container, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import "../public/footer.css";
+
 const Footer = () => {
   return (
-    <footer>
+    <footer className="text-center">
       <div className="footer-top">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-3 col-sm-6 col-xs-12">
+        <Container>
+          <Row>
+            <Col md={3} sm={6} xs={12}>
+              <h5>FAQ</h5>
               <ul>
                 <li>
                   <a href="#">FAQ</a>
@@ -20,11 +30,12 @@ const Footer = () => {
                   <a href="#">Speed Test</a>
                 </li>
               </ul>
-            </div>
-            <div className="col-md-3 col-sm-6 col-xs-12">
+            </Col>
+            <Col md={3} sm={6} xs={12}>
+              <h5>Help Center</h5>
               <ul>
                 <li>
-                  <a href="#">Help Centre</a>
+                  <a href="#">Help Center</a>
                 </li>
                 <li>
                   <a href="#">Jobs</a>
@@ -36,8 +47,9 @@ const Footer = () => {
                   <a href="#">Legal Notices</a>
                 </li>
               </ul>
-            </div>
-            <div className="col-md-3 col-sm-6 col-xs-12">
+            </Col>
+            <Col md={3} sm={6} xs={12}>
+              <h5>Account</h5>
               <ul>
                 <li>
                   <a href="#">Account</a>
@@ -52,11 +64,12 @@ const Footer = () => {
                   <a href="#">Netflix Originals</a>
                 </li>
               </ul>
-            </div>
-            <div className="col-md-3 col-sm-6 col-xs-12">
+            </Col>
+            <Col md={3} sm={6} xs={12}>
+              <h5>Media Center</h5>
               <ul>
                 <li>
-                  <a href="#">Media Centre</a>
+                  <a href="#">Media Center</a>
                 </li>
                 <li>
                   <a href="#">Terms of Use</a>
@@ -65,42 +78,42 @@ const Footer = () => {
                   <a href="#">Contact Us</a>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
       <div className="footer-bottom">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 col-sm-6 col-xs-12">
-              <p className="text-left">&copy; 2023 Netflix, Inc.</p>
-            </div>
-            <div className="col-md-6 col-sm-6 col-xs-12">
-              <ul className="footer-social text-right">
+        <Container>
+          <Row>
+            <Col md={6} sm={6} xs={12}>
+              <p className="text-center">&copy; 2023 Netflix, Inc.</p>
+            </Col>
+            <Col md={6} sm={6} xs={12}>
+              <ul className="footer-social text-center">
                 <li>
                   <a href="#">
-                    <i className="fab fa-facebook-f"></i>
+                    <FontAwesomeIcon icon={faFacebookF} />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i className="fab fa-twitter"></i>
+                    <FontAwesomeIcon icon={faTwitter} />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i className="fab fa-instagram"></i>
+                    <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i className="fab fa-youtube"></i>
+                    <FontAwesomeIcon icon={faYoutube} />
                   </a>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </footer>
   );

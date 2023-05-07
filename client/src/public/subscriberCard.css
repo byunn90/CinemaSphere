@@ -1,0 +1,89 @@
+.subscribe-card {
+  margin: 0 10px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  background-color: #252525;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+.subscribe-card:hover {
+  transform: translateY(-10px);
+}
+
+.subscribe-card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.subscribe-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.subscribe-card ul {
+  text-align: left;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.subscribe-card li {
+  margin-bottom: 10px;
+}
+
+.subscribe-card button {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px 30px;
+  background-color: #e50914;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.subscribe-card button:hover {
+  background-color: #c7000b;
+}
+
+.subscribe-card .card-footer {
+  text-align: center;
+  background-color: #f7f7f7;
+  border-top: none;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .subscribe-card {
+    max-width: 400px;
+  }
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-footer {
+  border: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal-dialog {
+    max-width: 400px;
+  }
+}

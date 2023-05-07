@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
-
 // import appolo hook and add user mutation
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
-
+import "../public/SignupForm.css";
 import Auth from "../utils/auth";
 
 const SignupForm = () => {
@@ -66,7 +65,12 @@ const SignupForm = () => {
   return (
     <>
       {/* This is needed for the validation functionality above */}
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form
+        className="signup-form"
+        noValidate
+        validated={validated}
+        onSubmit={handleFormSubmit}
+      >
         {/* show alert if server response is bad */}
         <Alert
           dismissible
