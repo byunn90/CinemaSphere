@@ -1,4 +1,4 @@
-# CinemaSphere
+# 🎬 CinemaSphere
 
 ![alt text]()
 ![alt text]()

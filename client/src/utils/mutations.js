@@ -58,3 +58,41 @@ export const REMOVE_MOVIE = gql`
     }
   }
 `;
+export const CREATE_SUBSCRIPTION = gql`
+  mutation createSubscription($input: SubscriptionType!) {
+    createSubscription(input: $input) {
+      id
+      user {
+        _id
+      }
+    }
+  }
+`;
+
+export const UPDATE_SUBSCRIPTION = gql`
+  mutation updateSubscription(
+    $subscriptionId: ID!
+    $type: SubscriptionType!
+    $paymentStatus: PaymentStatus!
+  ) {
+    updateSubscription(
+      id: $subscriptionId
+      input: { type: $type, paymentStatus: $paymentStatus }
+    ) {
+      id
+      user {
+        _id
+      }
+    }
+  }
+`;
+export const DELETE_SUBSCRIPTION = gql`
+  mutation deleteSubscription($subscriptionId: ID!) {
+    deleteSubscription(id: $subscriptionId) {
+      id
+      user {
+        _id
+      }
+    }
+  }
+`;

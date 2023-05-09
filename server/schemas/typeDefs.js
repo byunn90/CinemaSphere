@@ -32,11 +32,33 @@ const typeDefs = gql`
     link: String
   }
 
-  type Query {
-    me: User
+  type Subscription {
+    _id: ID!
+    userId: ID!
+    type: SubscriptionType!
+    paymentStatus: PaymentStatus!
   }
 
+  enum SubscriptionType {
+    BASIC
+    STANDARD
+    PREMIUM
+  }
+
+  enum PaymentStatus {
+    PENDING
+    PAID
+    CANCELED
+  }
+
+  type Query {
+    me: User
+    subscriptionFind: Subscription
+  }
   type Mutation {
+    createSubscription(input: SubscriptionType!): Subscription!
+    updateSubscription(id: ID!, input: SubscriptionType!): Subscription
+    deleteSubscription(id: ID!): Subscription
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveMovie(movieId: String!, title: String, link: String): User

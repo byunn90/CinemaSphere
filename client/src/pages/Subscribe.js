@@ -1,42 +1,42 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import "../public/subscriberCard.css";
-// import StripeCheckout from "react-stripe-checkout";
 import { useMutation } from "@apollo/react-hooks";
-import { LOGIN_USER } from "../utils/mutations";
-
-import Auth from "../utils/auth";
-
-const Subscribe = (e) => {
-  // Use states
+import { CREATE_SUBSCRIPTION } from "../utils/mutations";
+// TODO
+// FINISH up the subscription save it to the database
+// need to work on delete subscription next
+// need to work on update subscription
+const Subscribe = () => {
   const [showBasic, setShowBasic] = useState(false);
   const [showStandard, setShowStandard] = useState(false);
   const [showPremium, setShowPremium] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false); // Add a state variable to control success message visibility
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  // const history = useHistory();
+  const [addSubscription, { error }] = useMutation(CREATE_SUBSCRIPTION);
+
+  const history = useHistory();
 
   const handleClose = () => {
     setShowBasic(false);
     setShowStandard(false);
     setShowPremium(false);
+    setShowSuccess(false);
+    history.push("/");
   };
 
-  // Define a function to handle subscription
-
   const handleSubscription = (subscriptionType) => {
+    console.log(subscriptionType);
     if (subscriptionType === "basic") {
       setShowBasic(true);
       setShowSuccess(true);
     } else if (subscriptionType === "standard") {
       setShowStandard(true);
       setShowSuccess(true);
-
-      // } else if (subscriptionType === "premium") {
-      //   setShowPremium(true);
-      //   setShowSuccess(true);
-      // }
+    } else if (subscriptionType === "premium") {
+      setShowPremium(true);
+      setShowSuccess(true);
     }
   };
 
@@ -76,20 +76,13 @@ const Subscribe = (e) => {
             {/* <Card.Footer>Simultaneous streams: 1</Card.Footer> */}
           </Card>
         </Col>
-        <Modal show={showSuccess} onHide={handleClose} centered>
+        <Modal show={showSuccess && showBasic} onHide={handleClose} centered>
           <Modal.Body className="text-center">
             <i className="fas fa-check-circle fa-5x text-success mb-3"></i>
             <h3>Thanks for subscribing to Basic subscription!</h3>
           </Modal.Body>
           <Modal.Footer>
-            <Button
-              variant="success"
-              onClick={() => {
-                handleSubscription("basic");
-                setShowBasic(true);
-                setShowSuccess(true);
-              }}
-            >
+            <Button variant="success" onClick={handleClose}>
               Close
             </Button>
           </Modal.Footer>
@@ -125,20 +118,13 @@ const Subscribe = (e) => {
             {/* <Card.Footer>Simultaneous streams: 2</Card.Footer> */}
           </Card>
         </Col>
-        <Modal show={showSuccess} onHide={handleClose} centered>
+        <Modal show={showSuccess && showStandard} onHide={handleClose} centered>
           <Modal.Body className="text-center">
             <i className="fas fa-check-circle fa-5x text-success mb-3"></i>
             <h3>Thanks for subscribing to Standard subscription!</h3>
           </Modal.Body>
           <Modal.Footer>
-            <Button
-              variant="success"
-              onClick={() => {
-                handleSubscription("standard");
-                setShowBasic(false);
-                setShowSuccess(false);
-              }}
-            >
+            <Button variant="success" onClick={handleClose}>
               Close
             </Button>
           </Modal.Footer>
@@ -146,7 +132,7 @@ const Subscribe = (e) => {
         <Col md={4}>
           <Card
             className="subscribe-card shadow"
-            onClick={() => handleSubscription("standard")}
+            onClick={() => handleSubscription("premium")}
           >
             <Card.Header>
               <h3>Premium</h3>
@@ -173,9 +159,19 @@ const Subscribe = (e) => {
             </Card.Body>
           </Card>
         </Col>
+        <Modal show={showSuccess && showPremium} onHide={handleClose} centered>
+          <Modal.Body className="text-center">
+            <i className="fas fa-check-circle fa-5x text-success mb-3"></i>
+            <h3>Thanks for subscribing to Premium subscription!</h3>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="success" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Row>
     </Container>
   );
 };
-
 export default Subscribe;

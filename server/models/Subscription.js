@@ -11,14 +11,6 @@ const subscriptionSchema = new Schema({
     enum: ["basic", "standard", "premium"],
     required: true,
   },
-  startDate: {
-    type: Date,
-    required: true,
-  },
-  endDate: {
-    type: Date,
-    required: true,
-  },
   paymentStatus: {
     type: String,
     enum: ["pending", "paid", "canceled"],

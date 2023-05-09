@@ -1,22 +1,19 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Movie, Subscription } = require("../models");
+const { User, Subscription } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    // Get Subscription
-    // getSubscription: async (_, { subscriptionId }) => {
-    //   const subscription = await Subscription.findById(subscriptionId);
-    //   if (!subscription) {
-    //     throw new Error("Subscription not found");
-    //   }
-    //   return subscription;
-    // },
-    // // Get all subscriptions
-    // getSubscriptions: async () => {
-    //   const subscriptions = await Subscription.find();
-    //   return subscriptions;
-    // },
+    // Get find Subscription
+    subscriptionFind: async (_, args, context) => {
+      if (context.subscription) {
+        const subscription = await Subscription.findById(
+          context.subscription._id
+        ).populate();
+        return subscription;
+      }
+    },
+
     me: async (_, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate(
@@ -31,17 +28,36 @@ const resolvers = {
   //
 
   Mutation: {
-    // createSubscription: async (_, { userId, type }) => {
-    //   const subscription = await Subscription.create({
-    //     userId,
-    //     type,
-    //   });
-    //   return subscription;
-    // },
-    // Update
-    // Delete
+    createSubscription: async (_, { userId, type, paymentStatus }) => {
+      const subscription = await Subscription.create({
+        userId,
+        type,
+        paymentStatus,
+      });
 
-    login: async (parent, { email, password }) => {
+      return subscription;
+    },
+
+    updateSubscription: async (_, { subscriptionId, type, paymentStatus }) => {
+      const subscription = await Subscription.findByIdAndUpdate(
+        subscriptionId,
+        {
+          type,
+          paymentStatus,
+        },
+        { new: true }
+      );
+
+      return subscription;
+    },
+
+    deleteSubscription: async (_, { subscriptionId }) => {
+      const subscription = await Subscription.findByIdAndDelete(subscriptionId);
+
+      return subscription;
+    },
+
+    login: async (_, { email, password }) => {
       const user = await User.findOne({ email });
       // check if user exists with email and credentials
       if (!user) {

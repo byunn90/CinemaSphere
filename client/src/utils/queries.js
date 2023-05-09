@@ -14,6 +14,11 @@ export const GET_ME = gql`
         releaseDate
         voteAverage
       }
+      subscriptionType {
+        id
+        type
+        paymentStatus
+      }
     }
   }
 `;
