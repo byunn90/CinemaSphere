@@ -1,0 +1,136 @@
+.profile-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.profile-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-section {
+  flex-basis: calc(33.33% - 40px);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.profile-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 20px;
+}
+
+.profile-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-section li {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.profile-section button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.profile-section button:hover {
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+.update-subscription {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* set the z-index to a high value */
+}
+
+.update-subscription form {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.update-subscription h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 20px;
+}
+
+.update-subscription p {
+  font-size: 1rem;
+  color: #777;
+  margin: 0 0 10px;
+}
+
+.update-subscription ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.update-subscription li {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.update-subscription input[type="radio"] {
+  margin-right: 10px;
+}
+
+.update-subscription label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.update-subscription button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+}

@@ -28,12 +28,20 @@ const Subscribe = () => {
 
   const whichSubscription = async (subscriptionType) => {
     console.log(data);
+    let type = "";
+    if (subscriptionType === "basic") {
+      type = "BASIC";
+    } else if (subscriptionType === "standard") {
+      type = "STANDARD";
+    } else if (subscriptionType === "premium") {
+      type = "PREMIUM";
+    }
     try {
       if (!data) return;
       const { data: subscriptionData } = await addSubscription({
         variables: {
           userId: data.me._id,
-          type: "BASIC",
+          type: type,
           paymentStatus: "PAID",
         },
       });

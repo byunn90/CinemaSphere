@@ -32,18 +32,17 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to="/tv-shows">
                 TV Shows
               </Nav.Link>
-              {/* if user is logged in show saved items and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to="/saved">
-                    Saved Items
-                  </Nav.Link>
                   <NavDropdown
                     title={`${Auth.getProfile().data.username}`}
                     id="basic-nav-dropdown"
                   >
                     <Link to="/subscribe" className="dropdown-item">
                       Subscribe
+                    </Link>
+                    <Link to="/Profile" className="dropdown-item">
+                      Profile
                     </Link>
                     <NavDropdown.Item onClick={Auth.logout}>
                       Logout
