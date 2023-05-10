@@ -2,69 +2,94 @@
   margin: 0 auto;
   max-width: 800px;
   padding: 40px;
-  background-color: #f9f9f9;
+  background-color: #d3e3fc;
   border-radius: 10px;
+  border: 2px solid #f60404;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profile-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .profile-header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #333;
   margin: 0;
+}
+
+.profile-header button {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.profile-header button:hover {
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  border: 2px solid #333;
 }
 
 .profile-body {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .profile-section {
-  flex-basis: calc(33.33% - 40px);
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .profile-section h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #333;
-  margin: 0 0 20px;
-}
-
-.profile-section ul {
-  list-style: none;
   margin: 0;
-  padding: 0;
+  margin-bottom: 1rem;
 }
 
-.profile-section li {
-  font-size: 1rem;
+.profile-section p {
+  font-size: 1.2rem;
   color: #777;
-  margin-bottom: 10px;
+  margin: 0;
+  margin-bottom: 2rem;
 }
 
 .profile-section button {
   background-color: #333;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   transition: all 0.3s ease;
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 .profile-section button:hover {
@@ -73,6 +98,7 @@
   cursor: pointer;
   border: 2px solid #333;
 }
+
 .update-subscription {
   position: absolute;
   top: 50%;
@@ -115,22 +141,4 @@
   font-size: 1rem;
   color: #777;
   margin-bottom: 10px;
-}
-
-.update-subscription input[type="radio"] {
-  margin-right: 10px;
-}
-
-.update-subscription label {
-  font-size: 1rem;
-  color: #333;
-}
-
-.update-subscription button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  font-size: 20px;
 }

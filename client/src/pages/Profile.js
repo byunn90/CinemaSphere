@@ -7,13 +7,12 @@ import { useQuery } from "@apollo/client";
 
 const Profile = () => {
   const [showUpdateSubscription, setShowUpdateSubscription] = useState(false);
-
   const { loading, data } = useQuery(GET_ME);
   const username = data?.me?.username;
   const email = data?.me?.email;
-  const subscription = data?.me?.Subscription?.type;
-  const asdds = console.log(subscription);
-  console.log(asdds);
+  const subscription = data?.me?.subscription?.type;
+  console.log(subscription);
+
   return (
     <>
       <div className="profile-container">
@@ -30,16 +29,8 @@ const Profile = () => {
               <li>Payment Method: Visa **** 1234</li>
             </ul>
             <button onClick={() => setShowUpdateSubscription(true)}>
-              Update Subscription
+              Update Subscription & Profile
             </button>
-          </div>
-          <div className="profile-section">
-            <h2>Manage Profiles</h2>
-            <ul>
-              <li>Kayhan's Profile</li>
-              <li>Guest Profile</li>
-            </ul>
-            <button>Edit Profiles</button>
           </div>
         </div>
       </div>
