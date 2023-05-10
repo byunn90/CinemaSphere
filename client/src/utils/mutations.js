@@ -59,12 +59,20 @@ export const REMOVE_MOVIE = gql`
   }
 `;
 export const CREATE_SUBSCRIPTION = gql`
-  mutation createSubscription($input: SubscriptionType!) {
-    createSubscription(input: $input) {
-      id
-      user {
-        _id
-      }
+  mutation createSubscription(
+    $userId: ID!
+    $type: SubscriptionType!
+    $paymentStatus: PaymentStatus!
+  ) {
+    createSubscription(
+      userId: $userId
+      type: $type
+      paymentStatus: $paymentStatus
+    ) {
+      _id
+      userId
+      type
+      paymentStatus
     }
   }
 `;

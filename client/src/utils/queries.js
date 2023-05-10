@@ -6,16 +6,9 @@ export const GET_ME = gql`
       _id
       username
       email
-      savedMovies {
-        movieId
-        title
-        overview
-        posterUrl
-        releaseDate
-        voteAverage
-      }
-      subscriptionType {
-        id
+      Subscription {
+        _id
+        userId
         type
         paymentStatus
       }

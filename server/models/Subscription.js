@@ -8,12 +8,12 @@ const subscriptionSchema = new Schema({
   },
   type: {
     type: String,
-    enum: ["basic", "standard", "premium"],
+    enum: ["BASIC", "STANDARD", "PREMIUM"],
     required: true,
   },
   paymentStatus: {
     type: String,
-    enum: ["pending", "paid", "canceled"],
+    enum: ["PENDING", "PAID", "CANCELED"],
     required: true,
   },
 });

@@ -2,19 +2,15 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import "../public/subscriberCard.css";
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation, useQuery } from "@apollo/react-hooks";
 import { CREATE_SUBSCRIPTION } from "../utils/mutations";
-// TODO
-// FINISH up the subscription save it to the database
-// need to work on delete subscription next
-// need to work on update subscription
+import { GET_ME } from "../utils/queries";
+
 const Subscribe = () => {
   const [showBasic, setShowBasic] = useState(false);
   const [showStandard, setShowStandard] = useState(false);
   const [showPremium, setShowPremium] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-
-  const [addSubscription, { error }] = useMutation(CREATE_SUBSCRIPTION);
 
   const history = useHistory();
 
@@ -26,6 +22,26 @@ const Subscribe = () => {
     history.push("/");
   };
 
+  const [addSubscription, { error }] = useMutation(CREATE_SUBSCRIPTION);
+
+  const { loading, data } = useQuery(GET_ME);
+
+  const whichSubscription = async (subscriptionType) => {
+    console.log(data);
+    try {
+      if (!data) return;
+      const { data: subscriptionData } = await addSubscription({
+        variables: {
+          userId: data.me._id,
+          type: "BASIC",
+          paymentStatus: "PAID",
+        },
+      });
+      console.log(subscriptionData);
+    } catch (err) {
+      console.error(err);
+    }
+  };
   const handleSubscription = (subscriptionType) => {
     console.log(subscriptionType);
     if (subscriptionType === "basic") {
@@ -38,8 +54,8 @@ const Subscribe = () => {
       setShowPremium(true);
       setShowSuccess(true);
     }
+    whichSubscription(subscriptionType);
   };
-
   return (
     <Container className="subscribe-container">
       <div className="gradient-overlay"></div>
