@@ -17,15 +17,13 @@ const resolvers = {
     me: async (_, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate(
-          "savedMovies"
+          "subscription"
         );
         return user;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
   },
-
-  //
 
   Mutation: {
     createSubscription: async (_, { userId, type, paymentStatus }) => {
@@ -35,12 +33,15 @@ const resolvers = {
         paymentStatus,
       });
 
+      await User.findByIdAndUpdate(userId, {
+        subscription: subscription._id,
+      });
       return subscription;
     },
 
-    updateSubscription: async (_, { subscriptionId, type, paymentStatus }) => {
+    updateSubscription: async (_, { id, type, paymentStatus }) => {
       const subscription = await Subscription.findByIdAndUpdate(
-        subscriptionId,
+        id,
         {
           type,
           paymentStatus,
@@ -51,8 +52,12 @@ const resolvers = {
       return subscription;
     },
 
-    deleteSubscription: async (_, { subscriptionId }) => {
-      const subscription = await Subscription.findByIdAndDelete(subscriptionId);
+    deleteSubscriptionByType: async (_, { type }) => {
+      const subscription = await Subscription.findOneAndDelete({ type });
+
+      if (!subscription) {
+        throw new Error("Subscription not found");
+      }
 
       return subscription;
     },
@@ -81,4 +86,5 @@ const resolvers = {
     },
   },
 };
+
 module.exports = resolvers;

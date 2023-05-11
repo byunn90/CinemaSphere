@@ -1,16 +1,17 @@
 const { Schema } = require("mongoose");
 
 const movieSchema = new Schema({
-  directors: [
-    {
-      type: String,
-    },
-  ],
-  description: {
-    type: String,
+  movieId: {
+    type: Schema.Types.ObjectId,
     required: true,
   },
-  movieId: {
+  description: {
+    type: String,
+  },
+  director: {
+    type: [String],
+  },
+  title: {
     type: String,
     required: true,
   },
@@ -19,10 +20,6 @@ const movieSchema = new Schema({
   },
   link: {
     type: String,
-  },
-  title: {
-    type: String,
-    required: true,
   },
 });
 

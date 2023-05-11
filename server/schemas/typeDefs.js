@@ -7,7 +7,7 @@ const typeDefs = gql`
     email: String
     movieCount: Int
     savedMovies: [Movies]
-    Subscription: Subscription
+    subscription: Subscription
   }
 
   type Movies {
@@ -51,11 +51,13 @@ const typeDefs = gql`
     PAID
     CANCELED
   }
+
   type Query {
     me: User
     subscriptionFind: Subscription
     subscriptions: [Subscription]
   }
+
   type Mutation {
     createSubscription(
       userId: ID!
@@ -67,7 +69,7 @@ const typeDefs = gql`
       type: SubscriptionType!
       paymentStatus: PaymentStatus!
     ): Subscription
-    deleteSubscription(id: ID!): Subscription
+    deleteSubscriptionByType(type: SubscriptionType!): Subscription
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveMovie(movieId: String!, title: String, link: String): User

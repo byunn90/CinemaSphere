@@ -94,13 +94,11 @@ export const UPDATE_SUBSCRIPTION = gql`
     }
   }
 `;
-export const DELETE_SUBSCRIPTION = gql`
-  mutation deleteSubscription($subscriptionId: ID!) {
-    deleteSubscription(id: $subscriptionId) {
-      id
-      user {
-        _id
-      }
+export const DELETE_SUBSCRIPTION_BY_TYPE = gql`
+  mutation deleteSubscriptionByType($type: SubscriptionType!) {
+    deleteSubscriptionByType(type: $type) {
+      _id
+      type
     }
   }
 `;

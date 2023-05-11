@@ -1,17 +1,64 @@
 import { useState } from "react";
 import "../public/Profile.css";
-import { UPDATE_SUBSCRIPTION } from "../utils/mutations";
-import { DELETE_SUBSCRIPTION } from "../utils/mutations";
 import { GET_ME } from "../utils/queries";
-import { useQuery } from "@apollo/client";
+import {
+  DELETE_SUBSCRIPTION_BY_TYPE,
+  UPDATE_SUBSCRIPTION,
+} from "../utils/mutations";
+import { useQuery, useMutation } from "@apollo/client";
 
 const Profile = () => {
+  const [deleteSubscriptionByType, { error: deleteError }] = useMutation(
+    DELETE_SUBSCRIPTION_BY_TYPE
+  ); // Update the mutation name
   const [showUpdateSubscription, setShowUpdateSubscription] = useState(false);
   const { loading, data } = useQuery(GET_ME);
   const username = data?.me?.username;
   const email = data?.me?.email;
   const subscription = data?.me?.subscription?.type;
   console.log(subscription);
+  const [selectedType, setSelectedType] = useState("");
+
+  const handleDeleteSubscription = () => {
+    deleteSubscriptionByType({
+      variables: {
+        type: subscription,
+      },
+      refetchQueries: [{ query: GET_ME }],
+    })
+      .then(() => {
+        alert("Subscription deleted");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const [updateSubscription, { error: updateError }] =
+    useMutation(UPDATE_SUBSCRIPTION);
+
+  const handleUpdateSubscription = () => {
+    console.log("UPDATE ME");
+    if (selectedType) {
+      updateSubscription({
+        variables: {
+          subscriptionId: data.me.subscription._id,
+          type: selectedType,
+        },
+        refetchQueries: [{ query: GET_ME }],
+      })
+        .then(() => {
+          alert("Subscription updated");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>; // Display a loading state
+  }
 
   return (
     <>
@@ -42,34 +89,50 @@ const Profile = () => {
             <li>
               <input
                 type="radio"
-                id="basic"
+                id="BASIC"
                 name="subscription"
                 value="basic"
               />
-              <label htmlFor="basic">Basic - $8.99/month</label>
+              <label htmlFor="basic">BASIC - $8.99/month</label>
             </li>
             <li>
               <input
                 type="radio"
-                id="standard"
+                id="STANDARD"
                 name="subscription"
                 value="standard"
               />
-              <label htmlFor="standard">Standard - $12.99/month</label>
+              <label htmlFor="standard">STANDARD - $12.99/month</label>
             </li>
             <li>
               <input
                 type="radio"
-                id="premium"
+                id="PREMIUM"
                 name="subscription"
                 value="premium"
               />
-              <label htmlFor="premium">Premium - $15.99/month</label>
+              <label htmlFor="premium">PREMIUM - $15.99/month</label>
             </li>
           </ul>
-          <button>Update Subscription</button>
+          <button onClick={handleUpdateSubscription}>
+            Update Subscription
+          </button>
+
           <button onClick={() => setShowUpdateSubscription(false)}>
             Cancel
+          </button>
+          <button
+            onClick={() => {
+              if (
+                window.confirm(
+                  "Are you sure you want to delete your subscription?"
+                )
+              ) {
+                handleDeleteSubscription();
+              }
+            }}
+          >
+            Delete Subscription
           </button>
         </div>
       )}
