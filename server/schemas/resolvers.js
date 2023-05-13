@@ -39,14 +39,11 @@ const resolvers = {
       return subscription;
     },
 
-    updateSubscription: async (_, { id, type, paymentStatus }) => {
-      const subscription = await Subscription.findByIdAndUpdate(
-        id,
-        {
-          type,
-          paymentStatus,
-        },
-        { new: true }
+    updateSubscription: async (_, { userId, type, paymentStatus }) => {
+      const subscription = await Subscription.findOneAndUpdate(
+        { userId },
+        { type, paymentStatus },
+        { new: true } // To return the updated subscription
       );
 
       return subscription;

@@ -65,7 +65,7 @@ const typeDefs = gql`
       paymentStatus: PaymentStatus!
     ): Subscription!
     updateSubscription(
-      id: ID!
+      userId: ID!
       type: SubscriptionType!
       paymentStatus: PaymentStatus!
     ): Subscription

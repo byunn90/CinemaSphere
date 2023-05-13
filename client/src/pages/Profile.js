@@ -8,17 +8,17 @@ import {
 import { useQuery, useMutation } from "@apollo/client";
 
 const Profile = () => {
+  const { loading, data } = useQuery(GET_ME);
   const [deleteSubscriptionByType, { error: deleteError }] = useMutation(
     DELETE_SUBSCRIPTION_BY_TYPE
-  ); // Update the mutation name
+  );
   const [showUpdateSubscription, setShowUpdateSubscription] = useState(false);
-  const { loading, data } = useQuery(GET_ME);
+  const [selectedType, setSelectedType] = useState("");
+  const userId = data?.me?._id;
   const username = data?.me?.username;
   const email = data?.me?.email;
   const subscription = data?.me?.subscription?.type;
-  console.log(subscription);
-  const [selectedType, setSelectedType] = useState("");
-
+  console.log(selectedType);
   const handleDeleteSubscription = () => {
     deleteSubscriptionByType({
       variables: {
@@ -38,12 +38,12 @@ const Profile = () => {
     useMutation(UPDATE_SUBSCRIPTION);
 
   const handleUpdateSubscription = () => {
-    console.log("UPDATE ME");
-    if (selectedType) {
+    if (selectedType && userId) {
       updateSubscription({
         variables: {
-          subscriptionId: data.me.subscription._id,
+          userId: userId,
           type: selectedType,
+          paymentStatus: "PAID",
         },
         refetchQueries: [{ query: GET_ME }],
       })
@@ -57,7 +57,18 @@ const Profile = () => {
   };
 
   const handleRadioChange = (event) => {
-    setSelectedType(event.target.value);
+    const subscriptionType = event.target.value;
+
+    let type = "";
+    if (subscriptionType === "basic") {
+      type = "BASIC";
+    } else if (subscriptionType === "standard") {
+      type = "STANDARD";
+    } else if (subscriptionType === "premium") {
+      type = "PREMIUM";
+    }
+
+    setSelectedType(type);
   };
 
   if (loading) {
@@ -76,7 +87,7 @@ const Profile = () => {
             <ul>
               <li>Name: {username}</li>
               <li>Email: {email}</li>
-              <li>Subscription: {subscription}</li>
+              <li>Subscription: {selectedType}</li>
               <li>Payment Method: Visa **** 1234</li>
             </ul>
             <button onClick={() => setShowUpdateSubscription(true)}>
@@ -95,7 +106,7 @@ const Profile = () => {
                 type="radio"
                 id="BASIC"
                 name="subscription"
-                checked={selectedType === "basic"}
+                checked={selectedType === "BASIC"}
                 value="basic"
                 onChange={handleRadioChange}
               />
@@ -106,7 +117,7 @@ const Profile = () => {
                 type="radio"
                 id="STANDARD"
                 name="subscription"
-                checked={selectedType === "standard"}
+                checked={selectedType === "STANDARD"}
                 value="standard"
                 onChange={handleRadioChange}
               />
@@ -117,7 +128,7 @@ const Profile = () => {
                 type="radio"
                 id="PREMIUM"
                 name="subscription"
-                checked={selectedType === "premium"}
+                checked={selectedType === "PREMIUM"}
                 value="premium"
                 onChange={handleRadioChange}
               />

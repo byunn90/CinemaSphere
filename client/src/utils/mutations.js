@@ -79,21 +79,23 @@ export const CREATE_SUBSCRIPTION = gql`
 
 export const UPDATE_SUBSCRIPTION = gql`
   mutation updateSubscription(
-    $subscriptionId: ID!
+    $userId: ID!
     $type: SubscriptionType!
     $paymentStatus: PaymentStatus!
   ) {
     updateSubscription(
-      id: $subscriptionId
-      input: { type: $type, paymentStatus: $paymentStatus }
+      userId: $userId
+      type: $type
+      paymentStatus: $paymentStatus
     ) {
-      id
-      user {
-        _id
-      }
+      _id
+      userId
+      type
+      paymentStatus
     }
   }
 `;
+
 export const DELETE_SUBSCRIPTION_BY_TYPE = gql`
   mutation deleteSubscriptionByType($type: SubscriptionType!) {
     deleteSubscriptionByType(type: $type) {
