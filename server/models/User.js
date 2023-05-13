@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 const movieSchema = require("./Movie");
+const subscriptionSchema = require("./Subscription"); // Import the Subscription model
 
 const userSchema = new Schema(
   {
@@ -11,7 +12,7 @@ const userSchema = new Schema(
     },
     subscription: {
       type: Schema.Types.ObjectId,
-      ref: "Subscription",
+      ref: "Subscription", // Use the actual Subscription model reference
     },
     email: {
       type: String,
@@ -49,7 +50,7 @@ userSchema.virtual("movieCount").get(function () {
   return this.savedMovies.length;
 });
 
-userSchema.virtual("movieCount").get(function () {
+userSchema.virtual("subscriptionDetails").get(function () {
   return this.subscription;
 });
 

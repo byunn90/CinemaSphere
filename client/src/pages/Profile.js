@@ -56,6 +56,10 @@ const Profile = () => {
     }
   };
 
+  const handleRadioChange = (event) => {
+    setSelectedType(event.target.value);
+  };
+
   if (loading) {
     return <div>Loading...</div>; // Display a loading state
   }
@@ -91,7 +95,9 @@ const Profile = () => {
                 type="radio"
                 id="BASIC"
                 name="subscription"
+                checked={selectedType === "basic"}
                 value="basic"
+                onChange={handleRadioChange}
               />
               <label htmlFor="basic">BASIC - $8.99/month</label>
             </li>
@@ -100,7 +106,9 @@ const Profile = () => {
                 type="radio"
                 id="STANDARD"
                 name="subscription"
+                checked={selectedType === "standard"}
                 value="standard"
+                onChange={handleRadioChange}
               />
               <label htmlFor="standard">STANDARD - $12.99/month</label>
             </li>
@@ -109,7 +117,9 @@ const Profile = () => {
                 type="radio"
                 id="PREMIUM"
                 name="subscription"
+                checked={selectedType === "premium"}
                 value="premium"
+                onChange={handleRadioChange}
               />
               <label htmlFor="premium">PREMIUM - $15.99/month</label>
             </li>
