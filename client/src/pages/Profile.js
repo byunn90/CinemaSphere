@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../public/Profile.css";
 import { GET_ME } from "../utils/queries";
 import {
@@ -69,6 +69,7 @@ const Profile = () => {
     }
 
     setSelectedType(type);
+    localStorage.setItem("selectedSubscription", type); // Store the selected subscription in localStorage
   };
 
   if (loading) {
