@@ -38,6 +38,7 @@ const Profile = () => {
       .catch((error) => {
         console.error(error);
       });
+    window.location.reload();
   };
 
   const [updateSubscription, { error: updateError }] =
@@ -60,6 +61,7 @@ const Profile = () => {
         .catch((error) => {
           console.error(error);
         });
+      window.location.reload();
     }
   };
 
@@ -86,7 +88,7 @@ const Profile = () => {
     <>
       <div className="profile-container">
         <div className="profile-header">
-          <h1>{username} Profile</h1>
+          <h1 className="Profile-Name">{username} Profile</h1>
         </div>
         <div className="profile-body">
           <div className="profile-section">

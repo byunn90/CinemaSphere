@@ -1,14 +1,13 @@
 .profile-container {
-  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 40px;
-  background-color: #d3e3fc;
+  background-color: #f4f4f4;
   border-radius: 10px;
-  border: 2px solid #f60404;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile-header {
@@ -21,10 +20,11 @@
 }
 
 .profile-header h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #333;
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 .profile-header button {
@@ -46,7 +46,7 @@
 }
 
 .profile-body {
-  flex: 1; /* Take remaining vertical space */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -62,12 +62,12 @@
   padding: 2rem;
   background-color: #fff;
   border-radius: 1rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .profile-section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #333;
   margin: 0;
@@ -75,19 +75,18 @@
 }
 
 .profile-section p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #777;
   margin: 0;
   margin-bottom: 2rem;
 }
-
 .profile-section button {
   background-color: #333;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
   border-radius: 1rem;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   transition: all 0.3s ease;
   margin-top: auto;
@@ -99,6 +98,13 @@
   cursor: pointer;
   border: 2px solid #333;
 }
+.Profile-Name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  text-transform: capitalize; /* Convert the first letter to uppercase */
+}
 
 .update-subscription {
   position: absolute;
@@ -108,14 +114,14 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 9999; /* set the z-index to a high value */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
 }
 
 .update-subscription form {
   background-color: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
