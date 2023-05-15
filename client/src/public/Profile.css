@@ -1,14 +1,14 @@
 .profile-container {
-  margin: 0 auto;
-  max-width: 800px;
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
   background-color: #d3e3fc;
   border-radius: 10px;
   border: 2px solid #f60404;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .profile-header {
@@ -46,6 +46,7 @@
 }
 
 .profile-body {
+  flex: 1; /* Take remaining vertical space */
   display: flex;
   justify-content: center;
   align-items: flex-start;
