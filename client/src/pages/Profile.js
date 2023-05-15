@@ -49,7 +49,6 @@ const Profile = () => {
       })
         .then(() => {
           alert("Subscription updated");
-          localStorage.setItem("selectedSubscription", selectedType); // Store the updated subscription in localStorage
         })
         .catch((error) => {
           console.error(error);
@@ -70,7 +69,6 @@ const Profile = () => {
     }
 
     setSelectedType(type);
-    localStorage.setItem("selectedSubscription", type); // Store the selected subscription in localStorage
   };
 
   if (loading) {
