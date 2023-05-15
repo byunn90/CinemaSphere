@@ -20,7 +20,7 @@ const TvShows = () => {
 
         const { results } = await response.json();
 
-        const tvShowData = results.slice(0, 18).map((tvShow) => ({
+        const tvShowData = results.slice(0, 20).map((tvShow) => ({
           tvShowId: tvShow.id,
           name: tvShow.name,
           overview: tvShow.overview,

@@ -97,7 +97,7 @@ const Subscribe = () => {
                 Subscribe
               </Button>
             </Card.Body>
-            {/* <Card.Footer>Simultaneous streams: 1</Card.Footer> */}
+            <Card.Footer>Simultaneous streams: 1</Card.Footer>
           </Card>
         </Col>
         <Modal show={showSuccess && showBasic} onHide={handleClose} centered>
@@ -139,7 +139,7 @@ const Subscribe = () => {
                 Subscribe
               </Button>
             </Card.Body>
-            {/* <Card.Footer>Simultaneous streams: 2</Card.Footer> */}
+            <Card.Footer>Simultaneous streams: 2</Card.Footer>
           </Card>
         </Col>
         <Modal show={showSuccess && showStandard} onHide={handleClose} centered>
@@ -181,6 +181,7 @@ const Subscribe = () => {
                 Subscribe
               </Button>
             </Card.Body>
+            <Card.Footer>Simultaneous streams: 3</Card.Footer>
           </Card>
         </Col>
         <Modal show={showSuccess && showPremium} onHide={handleClose} centered>
