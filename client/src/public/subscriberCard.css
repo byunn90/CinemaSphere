@@ -9,6 +9,16 @@
   width: 100%;
 }
 
+.subscribe-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
 .subscribe-card:hover {
   transform: translateY(-10px);
 }
