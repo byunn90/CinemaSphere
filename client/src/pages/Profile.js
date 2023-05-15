@@ -87,7 +87,7 @@ const Profile = () => {
             <ul>
               <li>Name: {username}</li>
               <li>Email: {email}</li>
-              <li>Subscription: {subscription}</li>
+              <li>Subscription: {selectedType}</li>
               <li>Payment Method: Visa **** 1234</li>
             </ul>
             <button onClick={() => setShowUpdateSubscription(true)}>
