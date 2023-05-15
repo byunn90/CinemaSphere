@@ -13,11 +13,11 @@ const Profile = () => {
     DELETE_SUBSCRIPTION_BY_TYPE
   );
   const [showUpdateSubscription, setShowUpdateSubscription] = useState(false);
-  const [selectedType, setSelectedType] = useState("");
   const userId = data?.me?._id;
   const username = data?.me?.username;
   const email = data?.me?.email;
   const subscription = data?.me?.subscription?.type;
+  const [selectedType, setSelectedType] = useState(subscription || "Basic");
   console.log(selectedType);
   const handleDeleteSubscription = () => {
     deleteSubscriptionByType({
