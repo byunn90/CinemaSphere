@@ -49,6 +49,7 @@ const Profile = () => {
       })
         .then(() => {
           alert("Subscription updated");
+          localStorage.setItem("selectedSubscription", selectedType); // Store the updated subscription in localStorage
         })
         .catch((error) => {
           console.error(error);
