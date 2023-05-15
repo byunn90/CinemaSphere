@@ -16,8 +16,9 @@ const Profile = () => {
   const userId = data?.me?._id;
   const username = data?.me?.username;
   const email = data?.me?.email;
-  const subscription = data?.me?.subscription?.type;
-  const [selectedType, setSelectedType] = useState(subscription || "Basic");
+  const subscription = data?.me?.subscription;
+  console.log(data.me.subscription);
+  const [selectedType, setSelectedType] = useState(subscription);
   console.log(selectedType);
   const handleDeleteSubscription = () => {
     deleteSubscriptionByType({
