@@ -7,7 +7,7 @@ import TvShows from "./pages/TvShows";
 import Movies from "./pages/Movies";
 import Subscribe from "./pages/Subscribe";
 import SearchMovies from "./pages/SearchMovies";
-import profile from "./pages/Profile";
+import Profile from "./pages/Profile";
 
 // import ApolloProvider
 import {
@@ -51,7 +51,7 @@ function App() {
             <Route path="/search" component={SearchMovies} />
             <Route path="/tv-shows" component={TvShows} />
             <Route path="/subscribe" component={Subscribe} />
-            <Route path="/profile" component={profile} />
+            <Route path="/profile" component={Profile} />
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
           <Footer />
