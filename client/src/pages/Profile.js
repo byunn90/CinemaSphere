@@ -13,13 +13,18 @@ const Profile = () => {
     DELETE_SUBSCRIPTION_BY_TYPE
   );
   const [showUpdateSubscription, setShowUpdateSubscription] = useState(false);
+  const [selectedType, setSelectedType] = useState("");
   const userId = data?.me?._id;
   const username = data?.me?.username;
   const email = data?.me?.email;
-  const subscription = data?.me?.subscription;
-  console.log(data.me.subscription);
-  const [selectedType, setSelectedType] = useState(subscription);
-  console.log(selectedType);
+  const subscription = data?.me?.subscription?.type;
+
+  useEffect(() => {
+    if (subscription) {
+      setSelectedType(subscription);
+    }
+  }, [subscription]);
+
   const handleDeleteSubscription = () => {
     deleteSubscriptionByType({
       variables: {
@@ -50,6 +55,7 @@ const Profile = () => {
       })
         .then(() => {
           alert("Subscription updated");
+          setSelectedType(selectedType); // Update the local state with the selected subscription type
         })
         .catch((error) => {
           console.error(error);
