@@ -26,7 +26,7 @@ const AppNavbar = () => {
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/movies">
+              <Nav.Link as={Link} to="/Movies">
                 Movies
               </Nav.Link>
               <Nav.Link as={Link} to="/tv-shows">

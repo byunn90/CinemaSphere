@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import {
   Jumbotron,
@@ -9,12 +9,6 @@ import {
   Card,
   CardColumns,
 } from "react-bootstrap";
-
-import Auth from "../utils/auth";
-
-// import Apollo hook and mutation
-import { SAVE_BOOK } from "../utils/mutations";
-import { useMutation } from "@apollo/react-hooks";
 
 const SearchMovies = () => {
   // create state for holding returned movie api data
@@ -57,8 +51,6 @@ const SearchMovies = () => {
       console.error(err);
     }
   };
-
-  const handlePopClick = () => {};
 
   return (
     <>

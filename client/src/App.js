@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import TvShows from "./pages/TvShows";
-import Movies from "./pages/Movies";
+import OnlyMovies from "./pages/OnlyMovies";
 import Subscribe from "./pages/Subscribe";
 import SearchMovies from "./pages/SearchMovies";
 import Profile from "./pages/Profile";
@@ -51,6 +51,7 @@ function App() {
             <Route path="/search" component={SearchMovies} />
             <Route path="/tv-shows" component={TvShows} />
             <Route path="/subscribe" component={Subscribe} />
+            <Route path="/Movies" component={OnlyMovies} />
             <Route path="/profile" component={Profile} />
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
