@@ -15,6 +15,9 @@
 
 ## Description:
 
+This web application is built for clients who would like a relaxing night or with family too relax
+and watch movies for the night from a hard days work
+
 ## Technology:
 
 - MERN stack (MongoDB, Express.js, React, and Node.js)
@@ -22,6 +25,7 @@
 - MongoDB Atlas for database hosting
 - Heroku for deployment
 - JavaScript
+- BootStrap
 - HTML
 - CSS
 

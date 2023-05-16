@@ -7,9 +7,16 @@
 }
 
 .section h2 {
+  color: white;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.h1,
+h1 {
+  color: white;
+  font-size: 2.5rem;
 }
 
 .card {
@@ -99,6 +106,14 @@
 
 .modal-dialog {
   background-color: #141414;
+}
+
+.close:hover {
+  color: white;
+}
+
+.close {
+  color: white;
 }
 
 .modal-details h3 {

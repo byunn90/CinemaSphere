@@ -184,7 +184,12 @@ const MovieModal = ({ movie, onHide }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onHide} className="close-btn">
+        <Button
+          class="Hidden-Button"
+          variant="secondary"
+          onClick={onHide}
+          className="close-btn"
+        >
           Close
         </Button>
       </Modal.Footer>
