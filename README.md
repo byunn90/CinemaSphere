@@ -1,6 +1,6 @@
 # 🎬 CinemaSphere
 
-![Screenshot]("./client/public/images/Cinema-Sphere-home.png")
+![Screenshot]("\client\public\images\Cinema-Sphere-home.png")
 ![Screenshot]("./client/public/images/Cinema-Sphere-Login.png")
 ![Screenshot]("./client/public/images/Cinema-Sphere-Sign-up.png")
 ![Screenshot]("./client/public/images/Cinema-Sphere-Subscribe.png")
