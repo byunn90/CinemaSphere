@@ -1,10 +1,10 @@
 # 🎬 CinemaSphere
 
-![Screenshot]("./client/public/images/Cinema-Sphere-home.jpg")
-![Screenshot]("./client/public/images/Cinema-Sphere-Login.jpg")
-![Screenshot]("./client/public/images/Cinema-Sphere-Sign-up.jpg")
-![Screenshot]("./client/public/images/Cinema-Sphere-Subscribe.jpg")
-![Screenshot]("./client/public/images/Cinema-Sphere-Update.jpg")
+![Screenshot]("./client/public/images/Cinema-Sphere-home.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Login.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Sign-up.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Subscribe.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Update.png")
 
 ## Table of Contents
 
