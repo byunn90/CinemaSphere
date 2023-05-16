@@ -9,12 +9,13 @@
 - [License](#license)
 - [Contribution](#contribution)
 
-![alt text]("https://github.com/byunn90/CinemaSphere/blob/main/client/src/images/CinemaSpherehome.jpg?raw=true")
-![alt text]("https://github.com/byunn90/CinemaSphere/blob/main/client/src/images/CinemaSphereLogin.jpg?raw=true")
-![alt text]("https://github.com/byunn90/CinemaSphere/blob/main/client/src/images/CinemaSphereSignup.jpg?raw=true")
-![alt text]("https://github.com/byunn90/CinemaSphere/blob/main/client/src/images/CinemaSphereUpdate.jpg?raw=true")
-![alt text]("https://github.com/byunn90/CinemaSphere/blob/main/client/src/images/CinemaSphereUpdate.jpg?raw=true")
-![alt text]("https://github.com/byunn90/CinemaSphere/blob/main/client/src/images/CinemaSphereSubscribe.jpg?raw=true")
+![alt text]("./client/src/images/CinemaSpherehome.jpg")
+![alt text]("./client/src/images/CinemaSphereLogin.jpg")
+![alt text]("./client/src/images/CinemaSphereSignup.jpg")
+![alt text]("./client/src/public/CinemaSphereSignup.jpg")
+![alt text]("./client/src/images/CinemaSphereSubscribe.jpg")
+![alt text]("./client/src/images/CinemaSphereProfile.jpg")
+![alt text]("./client/src/images/CinemaSphereUpdate.jpg")
 
 ## Description:
 
