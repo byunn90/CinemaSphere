@@ -12,7 +12,8 @@
 ![alt text]("./client/public/CinemaSpherehome.jpg")
 ![alt text]("./client/src/images/CinemaSphereLogin.jpg")
 ![alt text]("./client/src/images/CinemaSphereSignup.jpg")
-![alt text]("./client/public/images/CinemaSphereSignup.jpg")
+
+![Screenshot]("./client/public/images/CinemaSphereSignup.jpg")
 ![alt text]("./client/src/images/CinemaSphereSubscribe.jpg")
 ![alt text]("./client/src/images/CinemaSphereProfile.jpg")
 ![alt text]("./client/src/images/CinemaSphereUpdate.jpg")
