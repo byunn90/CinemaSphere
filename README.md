@@ -6,17 +6,7 @@
 - [Technology](#Technology)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contribution](#contribution)
-
-![alt text]("./client/public/CinemaSpherehome.jpg")
-![alt text]("./client/src/images/CinemaSphereLogin.jpg")
-![alt text]("./client/src/images/CinemaSphereSignup.jpg")
-
-![Image description]("./client/public/logo192.png")
-![alt text]("./client/src/images/CinemaSphereSubscribe.jpg")
-![alt text]("./client/src/images/CinemaSphereProfile.jpg")
-![alt text]("./client/src/images/CinemaSphereUpdate.jpg")
 
 ## Description:
 
@@ -51,4 +41,6 @@ To install the application locally, follow these steps:
 
 - Kayhanturk90@Live.com
 
-## Video
+## Link
+
+https://moviesearchengine.herokuapp.com/
