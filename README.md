@@ -9,7 +9,7 @@
 - [License](#license)
 - [Contribution](#contribution)
 
-![alt text]("./client/src/images/CinemaSpherehome.jpg")
+![alt text]("./client/public/CinemaSpherehome.jpg")
 ![alt text]("./client/src/images/CinemaSphereLogin.jpg")
 ![alt text]("./client/src/images/CinemaSphereSignup.jpg")
 ![alt text]("./client/public/images/CinemaSphereSignup.jpg")
