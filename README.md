@@ -10,8 +10,7 @@
 
 ## Description:
 
-This web application is built for clients who would like a relaxing night or with family too relax
-and watch movies for the night from a hard days work
+This meticulously designed web application caters to discerning clients seeking a relaxing and enjoyable evening with their families or a well-deserved respite from their demanding work. It seamlessly integrates a comprehensive movie search feature with a robust subscription management system, offering a sophisticated and personalized entertainment experience. Users can effortlessly browse and select movies, leveraging the renowned themoviedb.org API, while also having the ability to sign up, create new subscriptions, update existing subscriptions, and manage their preferences. With streamlined onboarding, customizable subscription options, and intuitive CRUD operations, this professional web application provides the ideal platform for clients to unwind, immerse themselves in captivating narratives, and enjoy quality time with their loved ones, creating the perfect backdrop for relaxation and entertainment after a long day of work.
 
 ## Technology:
 
