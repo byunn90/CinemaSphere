@@ -1,8 +1,10 @@
 # 🎬 CinemaSphere
 
-![alt text]()
-![alt text]()
-![alt text]()
+![alt text]("./client/public/images/Cinema-Sphere-home.png")
+![alt text]("./client/public/images/Cinema-Sphere-Login.png")
+![alt text]("./client/public/images/Cinema-Sphere-Sign-up.png")
+![alt text]("./client/public/images/Cinema-Sphere-Subscribe.png")
+![alt text]("./client/public/images/Cinema-Sphere-Update.png")
 
 ## Table of Contents
 

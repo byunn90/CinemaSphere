@@ -67,7 +67,7 @@ const Subscribe = () => {
   return (
     <Container className="subscribe-container">
       <div className="gradient-overlay"></div>
-      <h1>Unlimited movies, TV shows, and more.</h1>
+      <h1 class="headin-sub">Unlimited movies, TV shows, and more.</h1>
       <p>Choose the plan that's right for you.</p>
       <Row className="justify-content-center">
         <Col md={4}>

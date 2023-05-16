@@ -5,6 +5,9 @@
   font-weight: normal;
   font-style: normal;
 }
+.headin-sub {
+  color: #252525;
+}
 .subscribe-container {
   background-color: #f7f7f7;
   min-height: 100vh;
