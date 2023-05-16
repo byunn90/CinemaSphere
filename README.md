@@ -39,7 +39,7 @@ To install the application locally, follow these steps:
 
 ## Contact
 
-- Kayhanturk90@Live.com
+Kayhanturk90@Live.com
 
 ## Link
 
