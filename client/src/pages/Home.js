@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
-import { Container, Card, CardColumns } from "react-bootstrap";
+import { Container, Card, CardColumns, Form } from "react-bootstrap";
 import "../public/home.css";
 
 const Home = () => {
@@ -8,6 +8,7 @@ const Home = () => {
   const [searchedMovies, setSearchedMovies] = useState([]);
   const [showPopularMovies, setShowPopularMovies] = useState(true);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     const API_KEY = `bb9bf4e9acc30780950de3e07fed784f`;
@@ -51,7 +52,37 @@ const Home = () => {
   const handleMovieClick = (movie) => {
     setSelectedMovie(movie);
   };
+  const handleSearch = async (e) => {
+    e.preventDefault();
 
+    try {
+      const API_KEY = `bb9bf4e9acc30780950de3e07fed784f`;
+
+      const response = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchInput}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+
+      const { results } = await response.json();
+
+      const movieData = results.map((movie) => ({
+        movieId: movie.id,
+        title: movie.title,
+        overview: movie.overview,
+        posterUrl: `https://image.tmdb.org/t/p/w200/${movie.poster_path}`,
+        releaseDate: movie.release_date,
+        voteAverage: movie.vote_average,
+        description: movie.description,
+      }));
+
+      handleSearchResults(movieData);
+    } catch (err) {
+      console.error(err);
+    }
+  };
   const handleModalClose = () => {
     setSelectedMovie(null);
   };
@@ -59,6 +90,20 @@ const Home = () => {
   return (
     <>
       <Container>
+        <h1>Search for Movies!</h1>
+        <Form onSubmit={handleSearch}>
+          <Form.Group>
+            <Form.Control
+              type="text"
+              placeholder="Search for a movie"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Search
+          </Button>
+        </Form>
         {showPopularMovies && popularMovies.length > 0 && (
           <div className="section">
             <h2>Popular Movies</h2>

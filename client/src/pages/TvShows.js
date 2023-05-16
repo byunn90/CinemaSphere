@@ -41,6 +41,7 @@ const TvShows = () => {
   return (
     <>
       <Container>
+        <h2>Popular TV Series</h2>
         <CardColumns>
           {popularTvShows.map((tvShow) => {
             return (
