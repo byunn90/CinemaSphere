@@ -9,11 +9,11 @@
 - [License](#license)
 - [Contribution](#contribution)
 
-![Screenshot]("./client/public/images/Cinema-Sphere-home.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Login.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Sign-up.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Subscribe.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Update.png")
+![Screenshot]("./client/images/Cinema-Sphere-home.png")
+![Screenshot]("./client/images/Cinema-Sphere-Login.png")
+![Screenshot]("./client/images/Cinema-Sphere-Sign-up.png")
+![Screenshot]("./client/images/Cinema-Sphere-Subscribe.png")
+![Screenshot]("./client/images/Cinema-Sphere-Update.png")
 
 ## Description:
 
