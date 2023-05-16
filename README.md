@@ -9,12 +9,12 @@
 - [License](#license)
 - [Contribution](#contribution)
 
-![alt text]("./client/src/images/Cinema-Sphere-home.jpg")
-![alt text]("./client/src/images/Cinema-Sphere-Login.jpg")
-![alt text]("./client/src/images/Cinema-Sphere-Sign-up.jpg")
-![alt text]("./client/src/images/Cinema-Sphere-Subscribe.jpg")
-![alt text]("./client/src/images/Cinema-Sphere-Profile.jpg")
-![alt text]("./client/src/images/Cinema-Sphere-Update.jpg")
+![alt text]("./client/src/images/CinemaSpherehome.jpg")
+![alt text]("./client/src/images/CinemaSphereLogin.jpg")
+![alt text]("./client/src/images/CinemaSphereSignup.jpg")
+![alt text]("./client/src/images/CinemaSphereSubscribe.jpg")
+![alt text]("./client/src/images/CinemaSphereProfile.jpg")
+![alt text]("./client/src/images/CinemaSphereUpdate.jpg")
 
 ## Description:
 
