@@ -1,11 +1,5 @@
 # 🎬 CinemaSphere
 
-![Screenshot]("\client\public\images\Cinema-Sphere-home.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Login.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Sign-up.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Subscribe.png")
-![Screenshot]("./client/public/images/Cinema-Sphere-Update.png")
-
 ## Table of Contents
 
 - [Description](#description)
@@ -14,6 +8,12 @@
 - [Usage](#usage)
 - [License](#license)
 - [Contribution](#contribution)
+
+![Screenshot]("./client/public/images/Cinema-Sphere-home.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Login.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Sign-up.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Subscribe.png")
+![Screenshot]("./client/public/images/Cinema-Sphere-Update.png")
 
 ## Description:
 
