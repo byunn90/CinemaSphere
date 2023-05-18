@@ -93,7 +93,7 @@ const Profile = () => {
         <div className="profile-body">
           <div className="profile-section">
             <h2>Account Information</h2>
-            <img src="../images/CinemaSphereLogin.jpg" alt="Hi"></img>
+            {/* <drop>Pick avatar</drop> */}
             <ul>
               <li>Name: {username}</li>
               <li>Email: {email}</li>
