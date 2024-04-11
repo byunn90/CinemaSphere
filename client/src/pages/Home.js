@@ -11,7 +11,7 @@ const Home = () => {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    const API_KEY = `bb9bf4e9acc30780950de3e07fed784f`;
+    const API_KEY = `87cc38e9ba575a305cd26d5f647dfa93`;
 
     const fetchPopularMovies = async () => {
       try {
@@ -56,7 +56,7 @@ const Home = () => {
     e.preventDefault();
 
     try {
-      const API_KEY = `bb9bf4e9acc30780950de3e07fed784f`;
+      const API_KEY = `87cc38e9ba575a305cd26d5f647dfa93`;
 
       const response = await fetch(
         `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchInput}`

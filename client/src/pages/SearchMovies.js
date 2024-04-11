@@ -19,7 +19,7 @@ const SearchMovies = () => {
   // create method to search for movies and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const API_KEY = `bb9bf4e9acc30780950de3e07fed784f`;
+    const API_KEY = `87cc38e9ba575a305cd26d5f647dfa93`;
 
     if (!searchInput) {
       return false;

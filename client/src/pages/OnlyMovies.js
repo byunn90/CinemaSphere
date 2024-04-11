@@ -10,7 +10,7 @@ const OnlyMovies = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
-    const API_KEY = `bb9bf4e9acc30780950de3e07fed784f`;
+    const API_KEY = `87cc38e9ba575a305cd26d5f647dfa93`;
 
     const fetchPopularMovies = async () => {
       try {
