@@ -1,5 +1,8 @@
 # 🎬 CinemaSphere
 
+[!alt text](./client/public/CinemaSpherehome.jpg)
+[!alt text](./client/public/images/CinemaSphereSignup.png)
+
 ## Table of Contents
 
 - [Description](#description)
